@@ -1,2 +1,2 @@
 # sandwich-sudoku
-A generator for "sandwich sudoku" puzzles
+A generator for "sandwich sudoku" puzzles, as seen the in *The Guardian*

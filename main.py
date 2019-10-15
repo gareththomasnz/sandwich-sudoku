@@ -101,10 +101,13 @@ for i in range(3):
 # draw row + column sums
 for i in range(9):
     s_draw.text((1025, i*100+110), '{}'.format(col_sums[i]), font=fnt, fill=(0,0,0,255))
+    p_draw.text((1025, i*100+110), '{}'.format(col_sums[i]), font=fnt, fill=(0,0,0,255))
     if int(row_sums[i]/10)==0:
         s_draw.text((i*100+135, 1015), '{}'.format(row_sums[i]), font=fnt, fill=(0,0,0,255))
+        p_draw.text((i*100+135, 1015), '{}'.format(row_sums[i]), font=fnt, fill=(0,0,0,255))
     else:
         s_draw.text((i*100+120, 1015), '{}'.format(row_sums[i]), font=fnt, fill=(0,0,0,255))
+        p_draw.text((i*100+120, 1015), '{}'.format(row_sums[i]), font=fnt, fill=(0,0,0,255))
 sol.save('solution.png', 'PNG')
 sol.show()
 

@@ -5,6 +5,8 @@ Sandwich sudoku follows the same general format as regular sudoku, but has fewer
 ![s](puzzle.png)
 Using this information, one can eventually get to the solution:
 \
+\
+ 
 ![s](solution.png)
 \
 \

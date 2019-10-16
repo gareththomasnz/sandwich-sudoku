@@ -83,6 +83,14 @@ p_draw = ImageDraw.Draw(puz)
 s_draw.rectangle([(0, 0), (1200, 1200)], outline='black', width=10)
 fnt = ImageFont.truetype('arial.ttf', 60)
 
+
+# generate starting squares
+xy = []
+while len(xy) < 10:
+    t = (random.randrange(9), random.randrange(9))
+    if t not in xy:
+        xy.append(t)
+
 # draw 9 x 9 grid with numbers
 
 for i in range(1,10):
@@ -91,12 +99,17 @@ for i in range(1,10):
         p_draw.rectangle([(i*100, j*100), ((i+1)*100, (j+1)*100)], outline='black')
         s_draw.text((i*100+35, j*100+15), '{}'.format(grid[i-1][j-1]), font=fnt, fill=(0,0,0,255))
 
+        if (i-1, j-1) in xy:
+            p_draw.text((i*100+35, j*100+15), '{}'.format(grid[i-1][j-1]), font=fnt, fill=(0,0,0,255))
+    
+
 
 # draw 3 x 3 thick grid
 for i in range(3):
     for j in range(3):
         s_draw.rectangle([(i*300+100, j*300+100), ((i+1)*300+100, (j+1)*300+100)], outline='black', width=5)
         p_draw.rectangle([(i*300+100, j*300+100), ((i+1)*300+100, (j+1)*300+100)], outline='black', width=5)
+
 
 # draw row + column sums
 for i in range(9):
@@ -108,6 +121,13 @@ for i in range(9):
     else:
         s_draw.text((i*100+120, 1015), '{}'.format(row_sums[i]), font=fnt, fill=(0,0,0,255))
         p_draw.text((i*100+120, 1015), '{}'.format(row_sums[i]), font=fnt, fill=(0,0,0,255))
+
+
+
+
+
+
 sol.save('solution.png', 'PNG')
-sol.show()
+puz.show()
+puz.save('puzzle.png', 'PNG')
 

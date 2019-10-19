@@ -2,7 +2,7 @@ import pickle
 import random
 from PIL import Image, ImageDraw, ImageFont
 
-games = pickle.load(open("games.p", "rb"))
+games = pickle.load(open("games_short.p", "rb"))
 mx = len(games)
 index = random.randrange(0,mx)
 

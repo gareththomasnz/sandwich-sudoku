@@ -8,6 +8,7 @@ index = random.randrange(0,mx)
 
 grid = []
 counter = 0
+x = 0
 # load in game data from a random string in games
 for i in range(9):
     row = []
